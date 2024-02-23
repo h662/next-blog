@@ -1,6 +1,6 @@
 import { allPosts } from "contentlayer/generated";
 import { format, parseISO } from "date-fns";
-import { NextPage } from "next";
+import { Metadata, NextPage } from "next";
 import Image from "next/image";
 
 interface PostLayoutProps {
@@ -24,7 +24,7 @@ export const generateMetadata = ({ params }: PostLayoutProps) => {
       title: post.title,
       description: post.description,
       images: [
-        post.thumbnail ? `./images/${post.thumbnail}` : "./images/owl.png",
+        post.thumbnail ? `/images/${post.thumbnail}` : "/images/owl.png",
       ],
     },
     twitter: {
@@ -32,7 +32,7 @@ export const generateMetadata = ({ params }: PostLayoutProps) => {
       title: post.title,
       description: post.description,
       images: [
-        post.thumbnail ? `./images/${post.thumbnail}` : "./images/owl.png",
+        post.thumbnail ? `/images/${post.thumbnail}` : "/images/owl.png",
       ],
     },
   };
